@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  deploy:
+    machine: true
+    working_directory: ~/repo
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "bf:d8:27:dd:c8:41:89:5f:c3:9b:c4:c3:0f:e0:01:4e"
+      - checkout
+      - run:
+          command: scp -o StrictHostKeyChecking=no ./scripts/deploy.sh ./scripts/env.sh docker-compose.yml index.html ${DO_USER}@irix.dev:~
+      - run:
+          command: scp -r -o StrictHostKeyChecking=no ./nginx ./assets ${DO_USER}@irix.dev:~
+      - run:
+          command: ssh -o StrictHostKeyChecking=no ${DO_USER}@irix.dev "/bin/bash ./deploy.sh"
+workflows:
+  version: 2
+  test:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
