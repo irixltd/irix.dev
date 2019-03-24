@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IRIX Ltd.</title>
+    <meta name="description" content="IRIX Ltd. software consulting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="theme-color" content="#00b5ec" />
+    <style>
+      @font-face {
+        font-family: "tex_gyre_herosregular";
+        src: url("assets/fonts/texgyreheros_regular_macroman/texgyreheros-regular-webfont.eot");
+        src: url("assets/fonts/texgyreheros_regular_macroman/texgyreheros-regular-webfont.eot?#iefix")
+            format("embedded-opentype"),
+          url("assets/fonts/texgyreheros_regular_macroman/texgyreheros-regular-webfont.woff")
+            format("woff"),
+          url("assets/fonts/texgyreheros_regular_macroman/texgyreheros-regular-webfont.ttf")
+            format("truetype"),
+          url("assets/fonts/texgyreheros_regular_macroman/texgyreheros-regular-webfont.svg#tex_gyre_herosregular")
+            format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "tex_gyre_herosregular";
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin-bottom: 0;
+      }
+
+      .section .inner {
+        padding: 50px 100px 0 100px;
+        max-width: 986px;
+      }
+
+      .section:first-child .inner {
+        padding-top: 100px;
+      }
+
+      .section:last-of-type .inner {
+        padding-top: 0;
+        padding-bottom: 50px;
+      }
+
+      #top {
+        color: white;
+        background: #00b5ec;
+        height: 300px;
+      }
+
+      .links {
+        margin-bottom: 20px;
+      }
+
+      .logos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logos.long {
+        justify-content: space-evenly;
+      }
+
+      .logos.short {
+        justify-content: start;
+      }
+
+      .logos.short img {
+        margin-right: 20px;
+      }
+
+      .logos img {
+        max-height: 50px;
+        max-width: 100px;
+        margin-bottom: 20px;
+      }
+
+      .project {
+        background-color: #f6f6f6;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .section .inner {
+          padding: 25px 25px 0 25px;
+        }
+
+        .section:last-of-type .inner {
+          padding-bottom: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="top" class="section">
+      <div class="inner">
+        <h1>IRIX Ltd</h1>
+        <span>Software Consulting</span>
+      </div>
+    </div>
+
+    <div id="projects" class="section">
+      <div class="inner">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <h3>Tic Tac Toe</h3>
+          <p>
+            A Tic Tac Toe game built using node.js, Typescript, Graphql
+            (Apollo), Koa, React, Jest, Docker, postgres, CircleCI.
+          </p>
+
+          <p>
+            Play the game at
+            <a href="https://irix.dev/tictactoe">irix.dev/tictactoe</a>
+          </p>
+
+          <div class="links">
+            <a href="https://irix.dev/tictactoe">Link</a>
+            <a href="https://github.com/mattcroberts/tic-tac-toe">Source</a>
+          </div>
+
+          <div class="logos long">
+            <img
+              src="assets/images/logos/nodejs-new-pantone-black.png"
+              alt="nodejs logo"
+            />
+            <img src="assets/images/logos/ts.png" alt="typescript logo" />
+
+            <img
+              src="assets/images/logos/reactjs-logo.jpg"
+              alt="reactjs logo"
+            />
+            <img src="assets/images/logos/koa.png" alt="loa logo" />
+
+            <img src="assets/images/logos/docker.png" alt="docker logo" />
+
+            <img src="assets/images/logos/postgres.svg" alt="postgres logo" />
+            <img
+              src="assets/images/logos/circle-logo-stacked-black.png"
+              alt="circle ci logo"
+            />
+
+            <img src="assets/images/logos/graphql.png" alt="graphql logo" />
+            <img src="assets/images/logos/apollo.svg" alt="apollo logo" />
+            <img
+              src="assets/images/logos/letsencrypt-logo-horizontal.svg"
+              alt="lets encrypt logo"
+            />
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>irix.dev</h3>
+          <p>This site.</p>
+
+          <div class="links">
+            <a href="https://irix.dev">Link</a>
+            <a href="https://github.com/irixltd/irix.dev">Source</a>
+          </div>
+
+          <div class="logos short">
+            <img src="assets/images/logos/HTML5_Logo.svg" alt="html5 logo" />
+            <img
+              src="assets/images/logos/CSS3_logo_and_wordmark.svg"
+              alt="css3 logo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <div class="inner">
+        <h2>Contact</h2>
+        <span>Email: <a href="mailto:hello@irix.dev">hello@irix.dev</a></span>
+      </div>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-124972837-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-124972837-1");
+    </script>
+  </body>
+</html>
