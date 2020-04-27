@@ -2,7 +2,7 @@
 
 # Modified from https://github.com/wmnnd/nginx-certbot
 
-domains=( irix.dev www.irix.dev irix.software www.irix.software )
+domains=( irix.dev www.irix.dev )
 
 compose_file_path=$1
 rsa_key_size=4096
