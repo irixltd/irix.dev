@@ -1,0 +1,14 @@
+localhost {
+    root * /usr/share/caddy
+    file_server
+    
+    
+    handle /metrix/* {
+    
+        reverse_proxy metrix_web:80
+
+        handle /graphql {
+            reverse_proxy metrix_api:4000
+        }
+    }
+}

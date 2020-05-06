@@ -1,23 +1,15 @@
 version: "3"
 
 services:
-  nginx:
-    image: nginx
+  caddy:
+    image: caddy:2
     ports:
       - 80:80
+      - 2019:2019
       - 443:443
-    restart: unless-stopped
     volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-      - ./index.html:/var/www/html/index.html
-      - ./assets:/var/www/html/assets
-    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
-  certbot:
-    image: certbot/certbot
-    restart: unless-stopped
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot --webroot-path /var/www/certbot; sleep 12h & wait $${!}; done;'"
+      - ./index.html:/usr/share/caddy/index.html
+      - ./assets:/usr/share/caddy/assets
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_data:/data
+      - ./caddy_config:/config
