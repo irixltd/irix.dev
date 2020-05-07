@@ -24,4 +24,9 @@ localhost, irix.dev {
             reverse_proxy api:3000
         }
     }
+
+    handle /rightmove-commute/* {
+
+        reverse_proxy rightmove-commute-api:6000
+    }
 }
