@@ -7,8 +7,8 @@ localhost, irix.dev {
     file_server
     
     
-    handle /metrix/* {
-    
+    handle /metrix* {
+        uri strip_prefix /metrix
         reverse_proxy metrix_web:80
 
         handle /graphql {
@@ -16,8 +16,8 @@ localhost, irix.dev {
         }
     }
 
-    handle /tictactoe/* {
-    
+    handle /tictactoe* {
+        uri strip_prefix /tictactoe
         reverse_proxy ui:5000
 
         handle /graphql {
@@ -25,8 +25,8 @@ localhost, irix.dev {
         }
     }
 
-    handle /rightmove-commute/* {
-
+    handle /rightmove-commute* {
+        uri strip_prefix /rightmove-commute
         reverse_proxy rightmove-commute-api:6000
     }
 }
