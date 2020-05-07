@@ -15,4 +15,13 @@ localhost, irix.dev {
             reverse_proxy metrix_api:4000
         }
     }
+
+    handle /tictactoe/* {
+    
+        reverse_proxy ui:5000
+
+        handle /graphql {
+            reverse_proxy api:3000
+        }
+    }
 }
