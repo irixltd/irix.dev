@@ -16,6 +16,8 @@ docker-compose -f docker-compose.yml \
     -d \
     --remove-orphans
 
+docker exec www_caddy_1 caddy reload --config /etc/caddy/Caddyfile
+
 sleep 5
 
 docker ps -a
