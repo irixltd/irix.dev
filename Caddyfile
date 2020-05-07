@@ -1,4 +1,8 @@
-localhost {
+www.irix.dev {
+    redir https://irix.dev
+}
+
+localhost, irix.dev {
     root * /usr/share/caddy
     file_server
     

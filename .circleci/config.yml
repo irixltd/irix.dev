@@ -9,7 +9,7 @@ jobs:
             - "88:15:7f:4a:1b:1e:12:9c:ab:e7:af:12:bc:d8:25:01"
       - checkout
       - run:
-          command: scp -o StrictHostKeyChecking=no ./scripts/deploy.sh ./scripts/env.sh docker-compose.yml index.html ${DO_USER}@${DO_HOST}:~
+          command: scp -o StrictHostKeyChecking=no ./scripts/deploy.sh ./scripts/env.sh docker-compose.yml index.html Caddyfile ${DO_USER}@${DO_HOST}:~
       - run:
           command: scp -r -o StrictHostKeyChecking=no ./nginx ./assets ${DO_USER}@${DO_HOST}:~
       - run:
