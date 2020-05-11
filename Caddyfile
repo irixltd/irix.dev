@@ -11,6 +11,11 @@ localhost, irix.dev {
         uri strip_prefix /metrix
         reverse_proxy metrix_web:80
 
+        handle /api* {
+            uri strip_prefix /api
+            reverse_proxy metrix_api:4000
+        }
+
         handle /graphql {
             reverse_proxy metrix_api:4000
         }
